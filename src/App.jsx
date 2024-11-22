@@ -1,7 +1,7 @@
 // src/App.jsx
 
 import './App.css'
-import { useState } from 'react'
+// import { useState } from 'react'
 import WeatherForecasts from './components/WeatherForecast/WeatherForecasts.jsx'
 
 const App = () => {
@@ -45,7 +45,16 @@ const App = () => {
   ];
   
   return (
-    <h1>Hello, World!</h1>
+    <>
+    <h1>Local Weather 🌤️</h1>
+    <section>
+      {weatherForecasts.map((weatherForecast) => (
+        <WeatherForecasts key={weatherForecast.id}
+        weatherForecast={weatherForecast} />
+      ))}
+    </section>
+  </>
+  
   );
 }
 
